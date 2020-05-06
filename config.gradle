@@ -1,0 +1,132 @@
+project.ext {
+    //Android
+    compileSdkVersion = 29
+    buildToolsVersion = "29.0.1"
+    minSdkVersion = 22
+    targetSdkVersion = 29
+    applicationId = "com.wx.legu"
+    versionCode = 1
+    versionName = "1.0"
+
+    //debug
+    isApplication = false
+
+    //App配置
+    androidConfig = {
+        ext ->
+            ext.apply plugin: ''
+            ext.description "app"
+            androidDefaultConfig ext.android
+            dependenciesConfig ext.dependencies
+    }
+
+    //lib库配置
+    libConfig = {
+        lib ->
+            lib.apply plugin: 'com.android.library'
+            lib.description "lib"
+            libConfig lib.android
+            dependenciesConfig lib.dependencies
+    }
+    //module配置
+    moduleConfig = {
+        module ->
+            if (project.ext.isApplication) {
+                module.apply plugin: 'com.android.application'
+                module.description "app"
+            } else {
+                module.apply plugin: 'com.android.library'
+                module.description "lib"
+            }
+            moduleDefaultConfig module.android
+            dependenciesConfig module.dependencies
+    }
+
+    androidDefaultConfig = {
+        android ->
+            android.compileSdkVersion project.ext.compileSdkVersion
+            android.buildToolsVersion project.ext.buildToolsVersion
+            android.defaultConfig {
+                applicationId project.ext.applicationId
+                minSdkVersion project.ext.minSdkVersion
+                targetSdkVersion project.ext.targetSdkVersion
+                versionCode project.ext.versionCode
+                versionName project.ext.versionName
+
+                testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+                javaCompileOptions {
+                    annotationProcessorOptions {
+                        arguments = [AROUTER_MODULE_NAME: extension.project.getName()]
+                    }
+                }
+                android.compileOptions {
+                    sourceCompatibility JavaVersion.VERSION_1_8
+                    targetCompatibility JavaVersion.VERSION_1_8
+                }
+            }
+    }
+
+    libDefaultConfig = {
+        ext ->
+            ext.compileSdkVersion project.ext.compileSdkVersion
+            ext.buildToolsVersion project.ext.buildToolsVersion
+            ext.defaultConfig {
+                minSdkVersion project.ext.minSdkVersion
+                targetSdkVersion project.ext.targetSdkVersion
+                versionCode project.ext.versionCode
+                versionName project.ext.versionName
+
+                testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+                javaCompileOptions {
+                    annotationProcessorOptions {
+                        arguments = [AROUTER_MODULE_NAME: extension.project.getName()]
+                    }
+                }
+            }
+    }
+
+    moduleDefaultConfig = {
+        ext ->
+            ext.compileSdkVersion project.ext.compileSdkVersion
+            ext.buildToolsVersion project.ext.buildToolsVersion
+            ext.defaultConfig {
+                minSdkVersion project.ext.minSdkVersion
+                targetSdkVersion project.ext.targetSdkVersion
+                versionCode project.ext.versionCode
+                versionName project.ext.versionName
+
+                testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+                javaCompileOptions {
+                    annotationProcessorOptions {
+                        arguments = [AROUTER_MODULE_NAME: extension.project.getName()]
+                    }
+                }
+            }
+            if (project.ext.isApplication) {
+                extension.compileOptions {
+                    sourceCompatibility JavaVersion.VERSION_1_8
+                    targetCompatibility JavaVersion.VERSION_1_8
+                }
+            }
+
+            extension.sourceSets {
+                main {
+                    if (project.ext.isModuleDebug) {
+                        manifest.srcFile 'src/main/manifest/AndroidManifest.xml'
+                    } else {
+                        manifest.srcFile 'src/main/AndroidManifest.xml'
+                    }
+                }
+            }
+    }
+
+    dependenciesConfig = {
+        dependency ->
+            dependency.implementation fileTree(dir: 'libs', include: ['*.jar'])
+            extension.annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
+    }
+
+}
