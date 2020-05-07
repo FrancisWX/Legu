@@ -12,20 +12,26 @@ project.ext {
     isApplication = false
 
     //App配置
-    androidConfig = {
-        ext ->
-            ext.apply plugin: ''
-            ext.description "app"
-            androidDefaultConfig ext.android
-            dependenciesConfig ext.dependencies
+    appConfig = {
+        app ->
+            app.apply plugin: 'com.android.application'
+            app.apply plugin: 'kotlin-android'
+            app.apply plugin: 'kotlin-android-extensions'
+            app.apply plugin:  'kotlin-kapt'
+            app.description "app"
+            appDefaultConfig app.android
+            dependenciesConfig app.dependencies
     }
 
     //lib库配置
     libConfig = {
         lib ->
             lib.apply plugin: 'com.android.library'
+            lib.apply plugin: 'kotlin-android'
+            lib.apply plugin: 'kotlin-android-extensions'
+            lib.apply plugin:  'kotlin-kapt'
             lib.description "lib"
-            libConfig lib.android
+            libDefaultConfig lib.android
             dependenciesConfig lib.dependencies
     }
     //module配置
@@ -33,20 +39,26 @@ project.ext {
         module ->
             if (project.ext.isApplication) {
                 module.apply plugin: 'com.android.application'
+                module.apply plugin: 'kotlin-android'
+                module.apply plugin: 'kotlin-android-extensions'
+                module.apply plugin:  'kotlin-kapt'
                 module.description "app"
             } else {
                 module.apply plugin: 'com.android.library'
+                module.apply plugin: 'kotlin-android'
+                module.apply plugin: 'kotlin-android-extensions'
+                module.apply plugin:  'kotlin-kapt'
                 module.description "lib"
             }
             moduleDefaultConfig module.android
             dependenciesConfig module.dependencies
     }
 
-    androidDefaultConfig = {
-        android ->
-            android.compileSdkVersion project.ext.compileSdkVersion
-            android.buildToolsVersion project.ext.buildToolsVersion
-            android.defaultConfig {
+    appDefaultConfig = {
+        extension ->
+            extension.compileSdkVersion project.ext.compileSdkVersion
+            extension.buildToolsVersion project.ext.buildToolsVersion
+            extension.defaultConfig {
                 applicationId project.ext.applicationId
                 minSdkVersion project.ext.minSdkVersion
                 targetSdkVersion project.ext.targetSdkVersion
@@ -55,12 +67,12 @@ project.ext {
 
                 testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-                javaCompileOptions {
-                    annotationProcessorOptions {
-                        arguments = [AROUTER_MODULE_NAME: extension.project.getName()]
+                kapt {
+                    arguments {
+                        arg("AROUTER_MODULE_NAME", project.getName())
                     }
                 }
-                android.compileOptions {
+                extension.compileOptions {
                     sourceCompatibility JavaVersion.VERSION_1_8
                     targetCompatibility JavaVersion.VERSION_1_8
                 }
@@ -68,10 +80,10 @@ project.ext {
     }
 
     libDefaultConfig = {
-        ext ->
-            ext.compileSdkVersion project.ext.compileSdkVersion
-            ext.buildToolsVersion project.ext.buildToolsVersion
-            ext.defaultConfig {
+        extension ->
+            extension.compileSdkVersion project.ext.compileSdkVersion
+            extension.buildToolsVersion project.ext.buildToolsVersion
+            extension.defaultConfig {
                 minSdkVersion project.ext.minSdkVersion
                 targetSdkVersion project.ext.targetSdkVersion
                 versionCode project.ext.versionCode
@@ -79,19 +91,19 @@ project.ext {
 
                 testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-                javaCompileOptions {
-                    annotationProcessorOptions {
-                        arguments = [AROUTER_MODULE_NAME: extension.project.getName()]
+                kapt {
+                    arguments {
+                        arg("AROUTER_MODULE_NAME", project.getName())
                     }
                 }
             }
     }
 
     moduleDefaultConfig = {
-        ext ->
-            ext.compileSdkVersion project.ext.compileSdkVersion
-            ext.buildToolsVersion project.ext.buildToolsVersion
-            ext.defaultConfig {
+        extension ->
+            extension.compileSdkVersion project.ext.compileSdkVersion
+            extension.buildToolsVersion project.ext.buildToolsVersion
+            extension.defaultConfig {
                 minSdkVersion project.ext.minSdkVersion
                 targetSdkVersion project.ext.targetSdkVersion
                 versionCode project.ext.versionCode
@@ -99,9 +111,9 @@ project.ext {
 
                 testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-                javaCompileOptions {
-                    annotationProcessorOptions {
-                        arguments = [AROUTER_MODULE_NAME: extension.project.getName()]
+                kapt {
+                    arguments {
+                        arg("AROUTER_MODULE_NAME", project.getName())
                     }
                 }
             }
@@ -114,7 +126,7 @@ project.ext {
 
             extension.sourceSets {
                 main {
-                    if (project.ext.isModuleDebug) {
+                    if (project.ext.isApplication) {
                         manifest.srcFile 'src/main/manifest/AndroidManifest.xml'
                     } else {
                         manifest.srcFile 'src/main/AndroidManifest.xml'
@@ -122,11 +134,56 @@ project.ext {
                 }
             }
     }
-
+    def room_version = '2.2.5'
+    def lifecycle_version = "2.2.0"
+    def nav_version = "2.3.0-alpha01"
     dependenciesConfig = {
         dependency ->
             dependency.implementation fileTree(dir: 'libs', include: ['*.jar'])
-            extension.annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
+            dependency.kapt 'com.alibaba:arouter-compiler:1.2.2'
+            dependency.testImplementation 'junit:junit:4.12'
+            dependency.androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+            dependency.androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     }
+
+    dependencies = [
+            stdlib : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
+            appcompat : 'androidx.appcompat:appcompat:1.1.0',
+            core_ktx : 'androidx.core:core-ktx:1.2.0',
+            recyclerView : 'androidx.recyclerview:recyclerview:1.2.0-alpha03',
+            swipeRefreshLayout : 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0-rc01',
+            fragment_ktx : 'androidx.fragment:fragment-ktx:1.3.0-alpha04',
+            material : 'com.google.android.material:material:1.2.0-alpha06',
+            constraintLayout : 'androidx.constraintlayout:constraintlayout:2.0.0-beta4',
+            viewPager2 : 'androidx.viewpager2:viewpager2:1.0.0',
+
+            //room
+            room_runtime : "androidx.room:room-runtime:$room_version",
+            room_compiler : "androidx.room:room-compiler:$room_version",
+            room_ktx : "androidx.room:room-ktx:$room_version",
+            //lifecycle
+            lifecycle :  "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version",
+            lifecycle_viewmodel :  "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version",
+            lifecycle_livedata : "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version",
+            //navigation
+            navigation_fragment :  "androidx.navigation:navigation-fragment-ktx:$nav_version",
+            navigation_ui :  "androidx.navigation:navigation-ui-ktx:$nav_version",
+            //paging
+            paging : "androidx.paging:paging-runtime:2.1.1",
+            //workmanager
+            workManager : "androidx.work:work-runtime-ktx:2.3.1",
+
+            glide : 'com.github.bumptech.glide:glide:4.11.0',
+            glide_kapt : 'com.github.bumptech.glide:compiler:4.11.0',
+
+            retrofit : 'com.squareup.retrofit2:retrofit:2.8.1',
+
+            smartRefreshLayout : 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0',
+            smartRefreshHeader : 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0',
+
+            shimmerLayout : 'io.supercharge:shimmerlayout:2.1.0',
+
+
+    ]
 
 }
