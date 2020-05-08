@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_recycler_view">8dp</dimen>
+    <dimen name="margin_bottom_floating_action_bar">30dp</dimen>
+    <dimen name="margin_end_floating_action_bar">30dp</dimen>
+
+    <dimen name="height_app_bar_layout">300dp</dimen>
+    <dimen name="height_collapsing_layout">250dp</dimen>
+    <!-- TextSize -->
+    <dimen name="text_size_24">24sp</dimen>
+    <dimen name="text_size_20">20sp</dimen>
+    <dimen name="text_size_16">16sp</dimen>
+</resources>

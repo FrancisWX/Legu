@@ -14,4 +14,19 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project.ext.dependencies.stdlib
+
+    implementation project.ext.dependencies.appcompat
+    implementation project.ext.dependencies.recyclerView
+
+    implementation project.ext.dependencies.lifecycle_viewmodel
+
+    implementation project.ext.dependencies.glide
+    kapt project.ext.dependencies.glide_kapt
+
+    implementation project.ext.dependencies.room_runtime
+    implementation project.ext.dependencies.room_ktx
+    kapt project.ext.dependencies.room_compiler
+
+    implementation project.ext.dependencies.paging
+
 }
