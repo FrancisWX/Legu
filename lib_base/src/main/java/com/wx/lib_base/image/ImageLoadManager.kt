@@ -1,9 +1,9 @@
-package com.wx.library_common.image
+package com.wx.lib_base.image
 
 import android.widget.ImageView
-import com.wx.library_common.image.ImageLoadAdapter.GlideImageLoader
-import com.wx.library_common.image.ImageLoadAdapter.IImageLoader
-import com.wx.library_common.image.ImageLoadAdapter.IImageResLoadListener
+import com.wx.lib_base.image.ImageLoadAdapter.GlideImageLoader
+import com.wx.lib_base.image.ImageLoadAdapter.IImageLoader
+import com.wx.lib_base.image.ImageLoadAdapter.IImageResLoadListener
 
 /**
  *Created by wx on 19-7-14
@@ -11,7 +11,7 @@ import com.wx.library_common.image.ImageLoadAdapter.IImageResLoadListener
  */
 object ImageLoadManager {
 
-    private val mImageLoader : IImageLoader  = GlideImageLoader()
+    private val mImageLoader : IImageLoader = GlideImageLoader()
 
     fun loadImage(
         imageView: ImageView,

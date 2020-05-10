@@ -1,4 +1,4 @@
-package com.wx.library_common.network
+package com.wx.lib_base.network
 
 /**
  *Created by wx on 19-7-14

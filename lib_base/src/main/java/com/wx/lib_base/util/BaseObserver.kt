@@ -1,9 +1,9 @@
-package com.wx.library_common.util
+package com.wx.lib_base.util
 
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
-import com.wx.library_common.view.BaseActivity
+import com.wx.lib_base.view.BaseActivity
 
 /**
  *Created by wx on 19-7-14

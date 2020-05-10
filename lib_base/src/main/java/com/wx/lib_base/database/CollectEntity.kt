@@ -1,4 +1,4 @@
-package com.wx.library_common.database
+package com.wx.lib_base.database
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

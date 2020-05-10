@@ -1,4 +1,4 @@
-package com.wx.library_common.util
+package com.wx.lib_base.util
 
 import android.content.Context
 import android.content.SharedPreferences

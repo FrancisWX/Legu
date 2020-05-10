@@ -29,4 +29,6 @@ dependencies {
 
     implementation project.ext.dependencies.paging
 
+    implementation project.ext.dependencies.retrofit
+    implementation project.ext.dependencies.moshi_converters
 }

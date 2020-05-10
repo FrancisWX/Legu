@@ -1,4 +1,4 @@
-package com.wx.library_common.app_update.bean
+package com.wx.lib_base.update.bean
 
 /**
  *Created by wx on 19-9-4

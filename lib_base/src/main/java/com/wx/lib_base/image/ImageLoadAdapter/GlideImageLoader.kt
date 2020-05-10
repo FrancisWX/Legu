@@ -1,4 +1,4 @@
-package com.wx.library_common.image.ImageLoadAdapter
+package com.wx.lib_base.image.ImageLoadAdapter
 
 import android.graphics.drawable.Drawable
 import android.widget.ImageView
@@ -7,13 +7,13 @@ import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
-import com.wx.library_common.common.Constants
+import com.wx.lib_base.common.Constants
 
 /**
  *Created by wx on 19-9-22
  *Description :
  */
-class GlideImageLoader : IImageLoader{
+class GlideImageLoader : IImageLoader {
 
     override fun loadImage(
         imageView: ImageView,

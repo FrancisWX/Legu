@@ -1,4 +1,4 @@
-package com.wx.library_common.data
+package com.wx.lib_base.data
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

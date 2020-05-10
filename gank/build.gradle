@@ -2,6 +2,9 @@ apply from: "${rootProject.rootDir}/config.gradle"
 project.ext.moduleConfig project
 
 android {
+    kotlinOptions {
+        jvmTarget = 1.8
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -14,4 +17,27 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project.ext.dependencies.stdlib
+    implementation project(':lib_res')
+    implementation project(':lib_base')
+
+    if (project.ext.isApplication) {
+        implementation project.ext.dependencies.appcompat
+        implementation project.ext.dependencies.constraintLayout
+    }
+
+    implementation project.ext.dependencies.lifecycle
+    implementation project.ext.dependencies.lifecycle_viewmodel
+    implementation project.ext.dependencies.fragment_ktx
+
+    implementation project.ext.dependencies.retrofit
+    implementation project.ext.dependencies.material
+    implementation project.ext.dependencies.viewPager2
+
+    implementation project.ext.dependencies.smartRefreshLayout
+    implementation project.ext.dependencies.smartRefreshHeader
+
+    implementation project.ext.dependencies.shimmerLayout
+
+    implementation project.ext.dependencies.banner
+
 }

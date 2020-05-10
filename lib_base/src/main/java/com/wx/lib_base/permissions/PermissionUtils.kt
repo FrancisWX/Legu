@@ -1,10 +1,10 @@
-package com.wx.library_common.permissions
+package com.wx.lib_base.permissions
 
-import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.MutableLiveData
+
 /**
  *Created by wx on 20-4-25
  *Description :

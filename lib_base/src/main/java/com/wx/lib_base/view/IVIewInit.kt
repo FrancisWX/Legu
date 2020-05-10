@@ -1,4 +1,4 @@
-package com.wx.library_common.view
+package com.wx.lib_base.view
 
 /**
  *Created by wx on 19-7-8

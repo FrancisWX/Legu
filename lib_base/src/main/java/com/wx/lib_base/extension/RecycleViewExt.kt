@@ -1,4 +1,4 @@
-package com.wx.library_common.extension
+package com.wx.lib_base.extension
 
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView

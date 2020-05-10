@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.scwang.smartrefresh.layout.SmartRefreshLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   android:orientation="vertical"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   android:id="@+id/refresher_module_gank_welfare_fragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_module_gank_welfare_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/margin_recycler_view"/>
+</com.scwang.smartrefresh.layout.SmartRefreshLayout>

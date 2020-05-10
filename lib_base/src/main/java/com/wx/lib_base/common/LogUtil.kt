@@ -1,4 +1,4 @@
-package com.wx.library_common.common
+package com.wx.lib_base.common
 
 import android.util.Log
 
@@ -22,7 +22,7 @@ object LogUtil {
     const val ASSERT : Int = 7
 
     fun v(msg: String){
-        log(VERBOSE,TAG,msg)
+        log(VERBOSE, TAG,msg)
     }
     fun v(TAG: String,msg: String){
         log(VERBOSE,TAG,msg)
@@ -54,7 +54,7 @@ object LogUtil {
 
     fun log(priority : Int,TAG : String,msg : String){
 
-        if(priority < ERROR && !BuildConfig.DEBUG){
+        if(priority < ERROR){
             return
         }
         if (WRITE_LOG_ENABLE) {

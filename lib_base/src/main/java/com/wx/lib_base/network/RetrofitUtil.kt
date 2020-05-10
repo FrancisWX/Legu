@@ -1,6 +1,6 @@
-package com.wx.library_common.network
+package com.wx.lib_base.network
 
-import com.wx.library_common.common.Constants
+import com.wx.lib_base.common.Constants
 import okhttp3.ConnectionPool
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit

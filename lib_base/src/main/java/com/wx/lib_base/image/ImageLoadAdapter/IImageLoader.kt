@@ -1,4 +1,4 @@
-package com.wx.library_common.image.ImageLoadAdapter
+package com.wx.lib_base.image.ImageLoadAdapter
 
 import android.widget.ImageView
 

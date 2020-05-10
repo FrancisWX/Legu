@@ -1,7 +1,9 @@
-package com.wx.library_common.database
+package com.wx.lib_base.database
 
 import android.content.Context
-import androidx.lifecycle.LiveData
+import com.wx.lib_base.database.CollectDao
+import com.wx.lib_base.database.CollectDatabase
+import com.wx.lib_base.database.CollectEntity
 
 /**
  *Created by wx on 19-9-2

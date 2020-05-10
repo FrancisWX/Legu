@@ -1,6 +1,5 @@
-package com.wx.library_common.database
+package com.wx.lib_base.database
 
-import androidx.lifecycle.LiveData
 import androidx.paging.DataSource
 import androidx.room.*
 
@@ -15,7 +14,7 @@ internal interface CollectDao {
     suspend fun insertCollect(collect : CollectEntity)
 
     @Query("SELECT * FROM collects")
-    fun getCollects() : DataSource.Factory<Int,CollectEntity>
+    fun getCollects() : DataSource.Factory<Int, CollectEntity>
 
     @Delete
     suspend fun removeCollect(collect: CollectEntity)

@@ -1,4 +1,4 @@
-package com.wx.library_common.permissions
+package com.wx.lib_base.permissions
 
 /**
  *Created by wx on 20-4-25

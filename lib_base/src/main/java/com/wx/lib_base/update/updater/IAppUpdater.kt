@@ -1,4 +1,4 @@
-package com.wx.library_common.app_update.updater
+package com.wx.lib_base.update.updater
 
 import java.io.File
 

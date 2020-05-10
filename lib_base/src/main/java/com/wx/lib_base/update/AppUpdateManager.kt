@@ -1,4 +1,4 @@
-package com.wx.library_common.app_update
+package com.wx.lib_base.update
 
 /**
  *Created by wx on 19-9-4

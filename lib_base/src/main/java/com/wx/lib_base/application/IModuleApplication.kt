@@ -1,4 +1,4 @@
-package com.wx.library_common.application
+package com.wx.lib_base.application
 
 import android.app.Application
 

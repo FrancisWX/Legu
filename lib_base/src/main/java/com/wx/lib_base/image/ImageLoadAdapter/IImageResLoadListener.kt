@@ -1,4 +1,4 @@
-package com.wx.library_common.image.ImageLoadAdapter
+package com.wx.lib_base.image.ImageLoadAdapter
 
 /**
  *Created by wx on 20-4-12

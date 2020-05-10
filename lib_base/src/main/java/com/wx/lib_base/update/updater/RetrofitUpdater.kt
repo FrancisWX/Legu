@@ -1,5 +1,8 @@
-package com.wx.library_common.app_update.updater
+package com.wx.lib_base.update.updater
 
+import com.wx.lib_base.update.updater.IApkDownloadCallback
+import com.wx.lib_base.update.updater.IAppUpdater
+import com.wx.lib_base.update.updater.IVersionRequestCallback
 import java.io.File
 
 /**
@@ -7,7 +10,7 @@ import java.io.File
  *Description :
  */
 
-class RetrofitUpdater : IAppUpdater{
+class RetrofitUpdater : IAppUpdater {
     override fun requestVersion(url: String, callBack: IVersionRequestCallback) {
     }
 

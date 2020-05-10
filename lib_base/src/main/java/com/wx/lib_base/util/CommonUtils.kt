@@ -1,7 +1,7 @@
-package com.wx.library_common.util
+package com.wx.lib_base.util
 
-import com.wx.library_common.common.Constants
-import com.wx.library_common.network.BaseResponse
+import com.wx.lib_base.common.Constants
+import com.wx.lib_base.network.BaseResponse
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.coroutineScope
 

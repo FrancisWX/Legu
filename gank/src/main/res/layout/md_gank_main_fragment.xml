@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/layout_root_gank_main_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:fitsSystemWindows="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_app_bar_layout"
+            android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_collapsing_layout"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:contentScrim="@color/lightseagreen"
+                android:fitsSystemWindows="true"
+                app:expandedTitleMarginEnd="64dp"
+                app:expandedTitleMarginStart="48dp">
+
+
+            <com.to.aboomy.pager2banner.Banner
+                    android:id="@+id/banner_view_md_gank_main_fragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fitsSystemWindows="true"/>
+
+<!--            <ImageView-->
+<!--                    android:id="@+id/iv_cover_module_gank_main_fragment"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:scaleType="centerCrop"-->
+<!--                    android:fitsSystemWindows="true"-->
+<!--                    android:background="@drawable/abc_vector_test" />-->
+
+            <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar_module_gank_main_fragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_collapseMode="pin"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                    app:navigationIcon="@drawable/abc_vector_test"/>
+
+
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        <com.google.android.material.tabs.TabLayout
+                android:id="@+id/layout_tab_module_gank_main_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/md_gank_height_tab_tablayout"
+                android:layout_alignParentBottom="true"
+                app:tabTextColor="@color/black"
+                app:tabIndicatorColor="@color/indianred"
+                app:tabSelectedTextColor="@color/white"
+                app:tabMode="scrollable"
+                android:layout_gravity="bottom"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vp2_pager_module_gank_main_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintTop_toBottomOf="@id/layout_tab_module_gank_main_fragment" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_end_floating_action_bar"
+            android:layout_marginBottom="@dimen/margin_bottom_floating_action_bar"
+            android:layout_gravity="bottom|end"
+            />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

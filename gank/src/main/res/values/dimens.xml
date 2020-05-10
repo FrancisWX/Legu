@@ -1,0 +1,14 @@
+<resources>
+    <dimen name="md_gank_height_tool_bar">56dp</dimen>
+    <dimen name="md_gank_margin_bottom_tool_bar">48dp</dimen>
+    <dimen name="md_gank_height_card_view">120dp</dimen>
+    <dimen name="md_gank_radius_card_view">8dp</dimen>
+    <dimen name="md_gank_width_preview_card_view">100dp</dimen>
+    <dimen name="md_gank_height_preview_card_view">100dp</dimen>
+    <dimen name="md_gank_height_title_card_view">30dp</dimen>
+    <dimen name="md_gank_height_sub_tile_card_view">20dp</dimen>
+    <dimen name="md_gank_height_summary_card_view">45dp</dimen>
+    <dimen name="md_gank_height_item_decoration">3dp</dimen>
+    <dimen name="md_gank_height_tab_tablayout">48dp</dimen>
+    <dimen name="md_gank_height_image_welfare">200dp</dimen>
+</resources>

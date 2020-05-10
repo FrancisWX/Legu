@@ -1,4 +1,4 @@
-package com.wx.library_common.view
+package com.wx.lib_base.view
 
 import android.content.Context
 import android.view.LayoutInflater
