@@ -1,0 +1,8 @@
+<resources>
+    <string name="module_wanandroid_app_name">module_wanandroid</string>
+
+    <string name="module_wanandroid_name_home_fragment">Home</string>
+    <string name="module_wanandroid_name_square_fragment">Square</string>
+    <string name="module_wanandroid_name_project_fragment">Project</string>
+    <string name="module_wanandroid_name_official_fragment">Official</string>
+</resources>

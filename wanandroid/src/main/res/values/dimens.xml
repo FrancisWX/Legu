@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- WanAndroid Common dimens -->
+
+
+    <!-- WanAndroidFragment -->
+    <dimen name="module_wanandroid_height_navi_view_fragment_main">56dp</dimen>
+
+
+    <!-- HomeFragment -->
+    <dimen name="module_wanandroid_height_banner">250dp</dimen>
+    <dimen name="module_wanandroid_height_article">100dp</dimen>
+</resources>

@@ -1,2 +1,25 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.wx.wanandroid" />
+    package="com.wx.wanandroid" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:name=".debug.WanAndroidDebugApplication"
+        android:theme="@style/Module_WanAndroid_AppTheme">
+        <activity
+            android:name="com.wx.module_wanandroid.debug.WanAndroidActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Module_WanAndroid_AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
