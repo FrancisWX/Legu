@@ -15,4 +15,31 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project.ext.dependencies.stdlib
+
+    implementation project(':lib_base')
+    implementation project(':lib_res')
+
+    implementation project.ext.dependencies.lifecycle
+    implementation project.ext.dependencies.lifecycle_viewmodel
+
+    implementation project.ext.dependencies.material
+    implementation project.ext.dependencies.swipeRefreshLayout
+
+    implementation project.ext.dependencies.fragment_ktx
+
+    if (project.ext.isApplication) {
+        implementation project.ext.dependencies.appcompat
+        implementation project.ext.dependencies.constraintLayout
+    }
+
+    implementation project.ext.dependencies.navigation_fragment
+    implementation project.ext.dependencies.navigation_ui
+
+    implementation project.ext.dependencies.paging
+
+    implementation project.ext.dependencies.retrofit
+
+    implementation project.ext.dependencies.banner
+
+
 }

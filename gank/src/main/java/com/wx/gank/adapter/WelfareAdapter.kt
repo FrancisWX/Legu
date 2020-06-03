@@ -7,8 +7,8 @@ import com.wx.gank.R
 import com.wx.lib_base.common.LogUtil
 import com.wx.lib_base.image.ImageLoadAdapter.IImageResLoadListener
 import com.wx.lib_base.image.ImageLoadManager
-import com.wx.library_common.view.BaseListAdapter
-import com.wx.library_common.view.BaseViewHolder
+import com.wx.lib_base.view.BaseListAdapter
+import com.wx.lib_base.view.BaseViewHolder
 import com.wx.gank.bean.GankData
 import io.supercharge.shimmerlayout.ShimmerLayout
 

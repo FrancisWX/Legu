@@ -10,7 +10,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 import com.to.aboomy.pager2banner.Banner
 import com.to.aboomy.pager2banner.IndicatorView
 import com.wx.gank.R
-import com.wx.library_common.view.BaseFragment
+import com.wx.lib_base.view.BaseFragment
 import com.wx.gank.adapter.BannerAdapter
 import com.wx.gank.adapter.ViewPagerAdapter
 import com.wx.gank.common.GankConstants

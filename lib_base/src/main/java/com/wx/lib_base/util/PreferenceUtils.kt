@@ -27,9 +27,8 @@ class PreferenceUtils<T>(private val context: Context,private val table: String,
     /**
      * 根据Key获取值
      */
-    @Suppress("UNCHECKED_CAST")
     private fun getValueByKey(key: String, default: T): T = with(preference) {
-        val value: Any = when (default) {
+        val value = when (default) {
             is Boolean -> getBoolean(key, default)
             is Int -> getInt(key, default)
             is Long -> getLong(key, default)

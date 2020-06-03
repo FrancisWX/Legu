@@ -29,12 +29,9 @@ abstract class BaseFragment : Fragment(),IVIewInit{
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initView()
-    }
-
-    override fun onResume() {
-        super.onResume()
         initData()
     }
+
 
 
 

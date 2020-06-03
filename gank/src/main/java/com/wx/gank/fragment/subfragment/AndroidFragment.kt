@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.scwang.smartrefresh.layout.SmartRefreshLayout
 import com.wx.gank.R
-import com.wx.library_common.view.BaseFragment
+import com.wx.lib_base.view.BaseFragment
 import com.wx.gank.adapter.GankDataAdapter
 import com.wx.gank.common.GankConstants
 import com.wx.gank.viewmodel.GankViewModel
@@ -17,7 +17,7 @@ import com.wx.gank.viewmodel.GankViewModel
  *Created by wx on 19-7-21
  *Description :
  */
-class AndroidFragment (val parentFragment : BaseFragment): BaseFragment(){
+class AndroidFragment (private val parentFragment : BaseFragment): BaseFragment(){
 
     private val TAG : String = this.javaClass.simpleName
 

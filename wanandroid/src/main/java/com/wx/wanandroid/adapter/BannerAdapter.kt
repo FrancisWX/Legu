@@ -4,11 +4,11 @@ import android.content.Context
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.DiffUtil
-import com.wx.library_common.image.ImageLoadManager
-import com.wx.library_common.view.BaseListAdapter
-import com.wx.library_common.view.BaseViewHolder
-import com.wx.module_wanandroid.R
-import com.wx.module_wanandroid.bean.BannerData
+import com.wx.lib_base.image.ImageLoadManager
+import com.wx.lib_base.view.BaseListAdapter
+import com.wx.lib_base.view.BaseViewHolder
+import com.wx.wanandroid.R
+import com.wx.wanandroid.bean.BannerData
 
 /**
  *Created by wx on 20-3-29

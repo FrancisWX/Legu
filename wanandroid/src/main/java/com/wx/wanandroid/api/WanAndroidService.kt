@@ -1,6 +1,6 @@
 package com.wx.wanandroid.api
 
-import com.wx.library_common.network.BaseResponse
+import com.wx.lib_base.network.BaseResponse
 import com.wx.module_wanandroid.bean.ArticleList
 import com.wx.module_wanandroid.bean.BannerData
 import com.wx.module_wanandroid.bean.OfficialAccounts

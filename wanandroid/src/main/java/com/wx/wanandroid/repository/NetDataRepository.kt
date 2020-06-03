@@ -1,6 +1,6 @@
 package com.wx.wanandroid.repository
 
-import com.wx.library_common.network.RetrofitUtil
+import com.wx.lib_base.network.RetrofitUtil
 import com.wx.module_wanandroid.api.WanAndroidService
 import com.wx.module_wanandroid.bean.ArticleList
 import com.wx.module_wanandroid.bean.BannerData

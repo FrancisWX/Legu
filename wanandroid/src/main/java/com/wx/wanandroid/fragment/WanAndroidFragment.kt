@@ -3,8 +3,8 @@ package com.wx.wanandroid.fragment
 import androidx.navigation.Navigation
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.wx.library_common.view.BaseFragment
-import com.wx.module_wanandroid.R
+import com.wx.lib_base.view.BaseFragment
+import com.wx.wanandroid.R
 
 /**
  *Created by wx on 20-3-8

@@ -5,8 +5,8 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.recyclerview.widget.DiffUtil
 import com.wx.gank.R
 import com.wx.lib_base.image.ImageLoadManager
-import com.wx.library_common.view.BaseListAdapter
-import com.wx.library_common.view.BaseViewHolder
+import com.wx.lib_base.view.BaseListAdapter
+import com.wx.lib_base.view.BaseViewHolder
 import com.wx.gank.bean.BannerData
 
 /**

@@ -1,7 +1,7 @@
 project.ext {
     //Android
     compileSdkVersion = 29
-    buildToolsVersion = "29.0.1"
+    buildToolsVersion = "29.0.2"
     minSdkVersion = 22
     targetSdkVersion = 29
     applicationId = "com.wx.legu"
@@ -39,17 +39,14 @@ project.ext {
         module ->
             if (project.ext.isApplication) {
                 module.apply plugin: 'com.android.application'
-                module.apply plugin: 'kotlin-android'
-                module.apply plugin: 'kotlin-android-extensions'
-                module.apply plugin:  'kotlin-kapt'
                 module.description "app"
             } else {
                 module.apply plugin: 'com.android.library'
-                module.apply plugin: 'kotlin-android'
-                module.apply plugin: 'kotlin-android-extensions'
-                module.apply plugin:  'kotlin-kapt'
                 module.description "lib"
             }
+            module.apply plugin: 'kotlin-android'
+            module.apply plugin: 'kotlin-android-extensions'
+            module.apply plugin:  'kotlin-kapt'
             moduleDefaultConfig module.android
             dependenciesConfig module.dependencies
     }
@@ -58,6 +55,9 @@ project.ext {
         extension ->
             extension.compileSdkVersion project.ext.compileSdkVersion
             extension.buildToolsVersion project.ext.buildToolsVersion
+            kotlinOptions {
+                jvmTarget = 1.8
+            }
             extension.defaultConfig {
                 applicationId project.ext.applicationId
                 minSdkVersion project.ext.minSdkVersion
@@ -66,7 +66,6 @@ project.ext {
                 versionName project.ext.versionName
 
                 testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
                 kapt {
                     arguments {
                         arg("AROUTER_MODULE_NAME", project.getName())
@@ -134,23 +133,25 @@ project.ext {
                 }
             }
     }
-    def room_version = '2.2.5'
-    def lifecycle_version = '2.2.0'
-    def nav_version = '2.3.0-alpha01'
-    def retrofit_version = '2.8.1'
+
     dependenciesConfig = {
         dependency ->
             dependency.implementation fileTree(dir: 'libs', include: ['*.jar'])
-            dependency.kapt 'com.alibaba:arouter-compiler:1.2.2'
+//            dependency.kapt 'com.alibaba:arouter-compiler:1.2.2'
             dependency.testImplementation 'junit:junit:4.12'
             dependency.androidTestImplementation 'androidx.test.ext:junit:1.1.1'
             dependency.androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     }
 
+    def room_version = '2.2.5'
+    def lifecycle_version = '2.2.0'
+    def nav_version = '2.3.0-alpha01'
+    def retrofit_version = '2.8.1'
     dependencies = [
             stdlib : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
             appcompat : 'androidx.appcompat:appcompat:1.1.0',
             core_ktx : 'androidx.core:core-ktx:1.2.0',
+            activity_ktx : 'androidx.activity:activity-ktx:1.2.0-alpha03',
             recyclerView : 'androidx.recyclerview:recyclerview:1.2.0-alpha03',
             swipeRefreshLayout : 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0-rc01',
             fragment_ktx : 'androidx.fragment:fragment-ktx:1.3.0-alpha04',

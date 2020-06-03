@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.scwang.smartrefresh.layout.SmartRefreshLayout
 import com.wx.gank.R
 import com.wx.lib_base.common.LogUtil
-import com.wx.library_common.view.BaseFragment
+import com.wx.lib_base.view.BaseFragment
 import com.wx.gank.adapter.WelfareAdapter
 import com.wx.gank.common.GankConstants
 import com.wx.gank.viewmodel.WelfareViewModel

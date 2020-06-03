@@ -1,9 +1,9 @@
 package com.wx.wanandroid.debug
 
 import androidx.fragment.app.commit
-import com.wx.library_common.view.BaseActivity
-import com.wx.module_wanandroid.R
-import com.wx.module_wanandroid.fragment.WanAndroidFragment
+import com.wx.lib_base.view.BaseActivity
+import com.wx.wanandroid.R
+import com.wx.wanandroid.fragment.WanAndroidFragment
 
 /**
  *Created by wx on 20-3-1
