@@ -1,7 +1,7 @@
 package com.wx.wanandroid.fragment.subfragment
 
 import com.wx.lib_base.view.BaseFragment
-import com.wx.module_wanandroid.R
+import com.wx.wanandroid.R
 
 /**
  *Created by wx on 20-3-15

@@ -10,10 +10,10 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.to.aboomy.pager2banner.Banner
 import com.to.aboomy.pager2banner.IndicatorView
 import com.wx.lib_base.view.BaseFragment
-import com.wx.module_wanandroid.R
-import com.wx.module_wanandroid.adapter.ArticleAdapter
-import com.wx.module_wanandroid.adapter.BannerAdapter
-import com.wx.module_wanandroid.viewmodel.HomeViewModel
+import com.wx.wanandroid.R
+import com.wx.wanandroid.adapter.ArticleAdapter
+import com.wx.wanandroid.adapter.BannerAdapter
+import com.wx.wanandroid.viewmodel.HomeViewModel
 
 /**
  *Created by wx on 20-3-15

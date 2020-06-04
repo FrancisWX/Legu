@@ -9,7 +9,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
+    applicationVariants.all { variant ->
+        def newName = "Legu.apk"
+        variant.outputs.all { output ->
+            outputFileName = newName
+        }
+    }
 }
 
 dependencies {

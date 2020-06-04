@@ -1,10 +1,10 @@
 package com.wx.wanandroid.repository
 
 import com.wx.lib_base.network.RetrofitUtil
-import com.wx.module_wanandroid.api.WanAndroidService
-import com.wx.module_wanandroid.bean.ArticleList
-import com.wx.module_wanandroid.bean.BannerData
-import com.wx.module_wanandroid.common.Constants
+import com.wx.wanandroid.api.WanAndroidService
+import com.wx.wanandroid.bean.ArticleList
+import com.wx.wanandroid.bean.BannerData
+import com.wx.wanandroid.common.Constants
 
 /**
  *Created by wx on 20-3-29

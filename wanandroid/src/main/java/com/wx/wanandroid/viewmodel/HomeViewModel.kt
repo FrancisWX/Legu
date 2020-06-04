@@ -2,9 +2,9 @@ package com.wx.wanandroid.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import com.wx.lib_base.data.BaseViewModel
-import com.wx.module_wanandroid.bean.ArticleList
-import com.wx.module_wanandroid.bean.BannerData
-import com.wx.module_wanandroid.repository.NetDataRepository
+import com.wx.wanandroid.bean.ArticleList
+import com.wx.wanandroid.bean.BannerData
+import com.wx.wanandroid.repository.NetDataRepository
 
 /**
  *Created by wx on 20-3-28

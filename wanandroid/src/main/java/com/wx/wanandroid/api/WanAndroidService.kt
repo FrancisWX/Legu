@@ -1,10 +1,10 @@
 package com.wx.wanandroid.api
 
 import com.wx.lib_base.network.BaseResponse
-import com.wx.module_wanandroid.bean.ArticleList
-import com.wx.module_wanandroid.bean.BannerData
-import com.wx.module_wanandroid.bean.OfficialAccounts
-import com.wx.module_wanandroid.bean.Project
+import com.wx.wanandroid.bean.ArticleList
+import com.wx.wanandroid.bean.BannerData
+import com.wx.wanandroid.bean.OfficialAccounts
+import com.wx.wanandroid.bean.Project
 import retrofit2.http.GET
 import retrofit2.http.Path
 

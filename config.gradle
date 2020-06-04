@@ -55,9 +55,6 @@ project.ext {
         extension ->
             extension.compileSdkVersion project.ext.compileSdkVersion
             extension.buildToolsVersion project.ext.buildToolsVersion
-            kotlinOptions {
-                jvmTarget = 1.8
-            }
             extension.defaultConfig {
                 applicationId project.ext.applicationId
                 minSdkVersion project.ext.minSdkVersion
