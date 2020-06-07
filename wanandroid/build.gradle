@@ -29,10 +29,8 @@ dependencies {
 
     implementation project.ext.dependencies.fragment_ktx
 
-    if (project.ext.isApplication) {
-        implementation project.ext.dependencies.appcompat
-        implementation project.ext.dependencies.constraintLayout
-    }
+    implementation project.ext.dependencies.appcompat
+    implementation project.ext.dependencies.constraintLayout
 
     implementation project.ext.dependencies.navigation_fragment
     implementation project.ext.dependencies.navigation_ui

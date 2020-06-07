@@ -4,7 +4,6 @@
         android:layout_height="match_parent"
         xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
     <fragment
             android:id="@+id/fragment_nav_host_main_fragment_module_wanandroid"
             android:layout_width="match_parent"

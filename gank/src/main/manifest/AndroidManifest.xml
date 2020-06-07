@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".fragment.GalleryActivity" />
+        <activity android:name=".ui.fragment.GalleryFragment" />
     </application>
 
 </manifest>

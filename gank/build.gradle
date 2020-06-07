@@ -20,10 +20,8 @@ dependencies {
     implementation project(':lib_res')
     implementation project(':lib_base')
 
-    if (project.ext.isApplication) {
-        implementation project.ext.dependencies.appcompat
-        implementation project.ext.dependencies.constraintLayout
-    }
+    implementation project.ext.dependencies.appcompat
+    implementation project.ext.dependencies.constraintLayout
 
     implementation project.ext.dependencies.lifecycle
     implementation project.ext.dependencies.lifecycle_viewmodel

@@ -1,4 +1,4 @@
-package com.wx.gank.fragment
+package com.wx.gank.ui.fragment
 
 import android.graphics.Color
 import android.widget.ImageView
@@ -14,7 +14,7 @@ import com.wx.lib_base.view.BaseFragment
 import com.wx.gank.adapter.BannerAdapter
 import com.wx.gank.adapter.ViewPagerAdapter
 import com.wx.gank.common.GankConstants
-import com.wx.gank.fragment.subfragment.*
+import com.wx.gank.ui.fragment.subfragment.*
 import com.wx.gank.viewmodel.GankViewModel
 
 /**
@@ -74,11 +74,11 @@ class GankFragment : BaseFragment(){
         val mGankViewModel by viewModels<GankViewModel>()
 
         val title = mutableListOf(
-            GankConstants.ANDROID_CONTENT_TYPE,
-            GankConstants.IOS_CONTENT_TYPE,
-            GankConstants.WEB_CONTENT_TYPE,
-            GankConstants.FLUTTER_CONTENT_TYPE,
-            GankConstants.GIRL_CONTENT_TYPE
+            getString(R.string.title_android_content),
+            getString(R.string.title_ios_content),
+            getString(R.string.title_frontend_content),
+            getString(R.string.title_flutter_content),
+            getString(R.string.title_welfare_content)
         )
         val fragments = mutableListOf(
             AndroidFragment(this),

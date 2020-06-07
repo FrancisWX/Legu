@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">GankIO</string>
+
+    <string name="title_android_content">Android</string>
+    <string name="title_ios_content">iOS</string>
+    <string name="title_frontend_content">FrontEnd</string>
+    <string name="title_flutter_content">Flutter</string>
+    <string name="title_welfare_content">Girl</string>
 </resources>

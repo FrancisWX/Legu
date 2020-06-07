@@ -1,4 +1,4 @@
-package com.wx.gank.fragment.subfragment
+package com.wx.gank.ui.fragment.subfragment
 
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
