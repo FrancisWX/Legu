@@ -7,22 +7,22 @@
 
     <fragment
             android:id="@+id/action_home"
-            android:name="com.wx.module_wanandroid.fragment.subfragment.HomeFragment"
+            android:name="com.wx.wanandroid.fragment.subfragment.HomeFragment"
             android:label="HomeFragment"
             tools:layout="@layout/md_wanandroid_home_fragment"/>
     <fragment
             android:id="@+id/action_square"
-            android:name="com.wx.module_wanandroid.fragment.subfragment.SquareFragment"
+            android:name="com.wx.wanandroid.fragment.subfragment.SquareFragment"
             android:label="SquareFragment"
             tools:layout="@layout/md_wanandroid_square_fragment"/>
     <fragment
             android:id="@+id/action_project"
-            android:name="com.wx.module_wanandroid.fragment.subfragment.ProjectFragment"
+            android:name="com.wx.wanandroid.fragment.subfragment.ProjectFragment"
             android:label="ProjectFragment"
             tools:layout="@layout/md_wanandroid_project_fragment"/>
     <fragment
             android:id="@+id/action_official"
-            android:name="com.wx.module_wanandroid.fragment.subfragment.OfficialFragment"
+            android:name="com.wx.wanandroid.fragment.subfragment.OfficialFragment"
             android:label="OfficialFragment"
             tools:layout="@layout/md_wanandroid_official_fragment"/>
 </navigation>

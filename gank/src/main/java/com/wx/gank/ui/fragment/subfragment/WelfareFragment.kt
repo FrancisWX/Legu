@@ -1,4 +1,4 @@
-package com.wx.gank.fragment.subfragment
+package com.wx.gank.ui.fragment.subfragment
 
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -42,7 +42,7 @@ class WelfareFragment(val parentFragment : BaseFragment) : BaseFragment() {
         mRecycleView.adapter = mAdapter
 
         mAdapter.mItemClick = fun (pos : Int){
-            LogUtil.d("Welfare","pos = $pos")
+
         }
         mAdapter.mItemLongClick = fun(pos : Int) :  Boolean {
             return false

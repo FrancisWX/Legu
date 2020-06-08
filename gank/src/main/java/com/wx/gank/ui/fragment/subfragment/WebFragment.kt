@@ -1,4 +1,4 @@
-package com.wx.gank.fragment.subfragment
+package com.wx.gank.ui.fragment.subfragment
 
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -12,29 +12,25 @@ import com.wx.gank.adapter.GankDataAdapter
 import com.wx.gank.common.GankConstants
 import com.wx.gank.viewmodel.GankViewModel
 
-
 /**
  *Created by wx on 19-7-21
  *Description :
  */
-class AndroidFragment (private val parentFragment : BaseFragment): BaseFragment(){
+class WebFragment (val parentFragment : BaseFragment): BaseFragment(){
 
-    private val TAG : String = this.javaClass.simpleName
-
-    private lateinit var mRefresher : SmartRefreshLayout
     private lateinit var mRecycleView : RecyclerView
     private lateinit var mAdapter: GankDataAdapter
+    private lateinit var mRefresher : SmartRefreshLayout
 
     override fun initBeforeView() {
-
     }
 
     override fun getContentId(): Int {
-        return R.layout.md_gank_android_fragment
+        return R.layout.md_gank_web_fragment
     }
 
     override fun initView() {
-        mRecycleView = mRootView.findViewById(R.id.recycler_module_gank_android_fragment)
+        mRecycleView = mRootView.findViewById(R.id.recycler_module_gank_web_fragment)
         val layoutManager = LinearLayoutManager(mContext)
 
         mRecycleView.layoutManager = layoutManager
@@ -48,36 +44,30 @@ class AndroidFragment (private val parentFragment : BaseFragment): BaseFragment(
         mAdapter = GankDataAdapter(mContext)
         mRecycleView.adapter = mAdapter
 
-        mRefresher = mRootView.findViewById(R.id.refresh_module_gank_android_fragment)
-
-
+        mRefresher = mRootView.findViewById(R.id.refresher_module_gank_web_fragment)
     }
 
     override fun initData() {
-
         val mViewModel by viewModels<GankViewModel>({parentFragment})
 
-        mViewModel.getAndroidData().observe(
+        mViewModel.getWebData(GankConstants.NUM_START_PAGE).observe(
             this,
-            Observer {data ->
-                data?.let{
-                    mAdapter.submitList(it)
-                    if (it.size > GankConstants.ITEM_PER_PAGE) {
-                        mRefresher.finishLoadMore()
-                    } else {
-                        mRefresher.finishRefresh()
-                    }
+            Observer {
+                mAdapter.submitList(it)
+                if (it.size > GankConstants.ITEM_PER_PAGE) {
+                    mRefresher.finishLoadMore()
+                } else {
+                    mRefresher.finishRefresh()
                 }
             }
         )
 
         mRefresher.setOnRefreshListener {
-            mViewModel.refresh(GankConstants.ANDROID_CONTENT_TYPE)
+            mViewModel.refresh(GankConstants.WEB_CONTENT_TYPE)
         }
         mRefresher.setOnLoadMoreListener {
-            mViewModel.loadMore(GankConstants.ANDROID_CONTENT_TYPE)
+            mViewModel.loadMore(GankConstants.WEB_CONTENT_TYPE)
         }
-
     }
 
 }

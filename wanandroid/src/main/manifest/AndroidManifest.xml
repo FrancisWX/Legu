@@ -11,7 +11,7 @@
         android:name=".debug.WanAndroidDebugApplication"
         android:theme="@style/Module_WanAndroid_AppTheme">
         <activity
-            android:name="com.wx.module_wanandroid.debug.WanAndroidActivity"
+            android:name=".debug.WanAndroidActivity"
             android:label="@string/app_name"
             android:theme="@style/Module_WanAndroid_AppTheme.NoActionBar">
             <intent-filter>

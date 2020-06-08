@@ -2,7 +2,7 @@ package com.wx.gank.debug
 
 import com.wx.gank.R
 import com.wx.lib_base.view.BaseActivity
-import com.wx.gank.fragment.GankFragment
+import com.wx.gank.ui.fragment.GankFragment
 
 /**
  *Created by wx on 19-7-21
@@ -20,7 +20,9 @@ class GankActivity : BaseActivity(){
     override fun initView() {
 
         supportFragmentManager.beginTransaction()
-            .replace(R.id.root_content_module_gank_main_activity, GankFragment())
+            .replace(R.id.root_content_module_gank_main_activity,
+                GankFragment()
+            )
             .commit()
     }
 

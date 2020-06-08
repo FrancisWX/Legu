@@ -1,4 +1,4 @@
-package com.wx.gank.widget
+package com.wx.gank.ui.widget
 
 import android.content.Context
 import android.util.AttributeSet

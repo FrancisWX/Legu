@@ -17,7 +17,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/height_collapsing_layout"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed"
-                app:contentScrim="@color/lightseagreen"
+                app:contentScrim="@android:color/transparent"
                 android:fitsSystemWindows="true"
                 app:expandedTitleMarginEnd="64dp"
                 app:expandedTitleMarginStart="48dp">
@@ -58,7 +58,8 @@
                 app:tabIndicatorColor="@color/indianred"
                 app:tabSelectedTextColor="@color/white"
                 app:tabMode="scrollable"
-                android:layout_gravity="bottom"/>
+                android:layout_gravity="bottom"
+                app:tabTextAppearance="@style/TabTextStyle" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
