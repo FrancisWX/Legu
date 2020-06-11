@@ -32,7 +32,7 @@ project.ext {
             lib.apply plugin:  'kotlin-kapt'
             lib.description "lib"
             libDefaultConfig lib.android
-            dependenciesConfig lib.dependencies
+            libDependenciesConfig lib.dependencies
     }
     //module配置
     moduleConfig = {
@@ -55,6 +55,7 @@ project.ext {
         extension ->
             extension.compileSdkVersion project.ext.compileSdkVersion
             extension.buildToolsVersion project.ext.buildToolsVersion
+
             extension.defaultConfig {
                 applicationId project.ext.applicationId
                 minSdkVersion project.ext.minSdkVersion
@@ -63,14 +64,14 @@ project.ext {
                 versionName project.ext.versionName
 
                 testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-                kapt {
-                    arguments {
-                        arg("AROUTER_MODULE_NAME", project.getName())
-                    }
-                }
                 extension.compileOptions {
                     sourceCompatibility JavaVersion.VERSION_1_8
                     targetCompatibility JavaVersion.VERSION_1_8
+                }
+            }
+            kapt {
+                arguments {
+                    arg("AROUTER_MODULE_NAME", project.getName())
                 }
             }
     }
@@ -86,12 +87,6 @@ project.ext {
                 versionName project.ext.versionName
 
                 testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
-                kapt {
-                    arguments {
-                        arg("AROUTER_MODULE_NAME", project.getName())
-                    }
-                }
             }
     }
 
@@ -106,17 +101,16 @@ project.ext {
                 versionName project.ext.versionName
 
                 testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
-                kapt {
-                    arguments {
-                        arg("AROUTER_MODULE_NAME", project.getName())
-                    }
-                }
             }
             if (project.ext.isApplication) {
                 extension.compileOptions {
                     sourceCompatibility JavaVersion.VERSION_1_8
                     targetCompatibility JavaVersion.VERSION_1_8
+                }
+            }
+            kapt {
+                arguments {
+                    arg("AROUTER_MODULE_NAME", project.getName())
                 }
             }
 
@@ -131,10 +125,19 @@ project.ext {
             }
     }
 
+    libDependenciesConfig = {
+        dependency ->
+            dependency.implementation fileTree(dir: 'libs', include: ['*.jar'])
+            dependency.testImplementation 'junit:junit:4.12'
+            dependency.androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+            dependency.androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    }
+
     dependenciesConfig = {
         dependency ->
             dependency.implementation fileTree(dir: 'libs', include: ['*.jar'])
-//            dependency.kapt 'com.alibaba:arouter-compiler:1.2.2'
+            dependency.kapt 'com.alibaba:arouter-compiler:1.2.2'
+            dependency.implementation 'com.alibaba:arouter-api:1.5.0'
             dependency.testImplementation 'junit:junit:4.12'
             dependency.androidTestImplementation 'androidx.test.ext:junit:1.1.1'
             dependency.androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
@@ -172,8 +175,11 @@ project.ext {
             //workmanager
             workManager : "androidx.work:work-runtime-ktx:2.3.1",
 
+            //Image
             glide : 'com.github.bumptech.glide:glide:4.11.0',
             glide_kapt : 'com.github.bumptech.glide:compiler:4.11.0',
+
+            coil : 'io.coil-kt:coil:0.11.0',
 
             retrofit : "com.squareup.retrofit2:retrofit:$retrofit_version",
             gson_converters : "com.squareup.retrofit2:converter-gson:$retrofit_version",

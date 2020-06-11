@@ -20,4 +20,5 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project.ext.dependencies.stdlib
+    implementation project.ext.dependencies.appcompat
 }
