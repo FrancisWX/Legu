@@ -15,12 +15,14 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project.ext.dependencies.stdlib
     implementation project.ext.dependencies.activity_ktx
-    implementation project.ext.dependencies.appcompat
+    api project.ext.dependencies.appcompat
     implementation project.ext.dependencies.recyclerView
 
     implementation project.ext.dependencies.lifecycle_viewmodel
 
-    implementation project.ext.dependencies.glide
+    implementation (project.ext.dependencies.glide) {
+        exclude  group : 'androidx.fragment', module : 'fragment'
+    }
     kapt project.ext.dependencies.glide_kapt
 
     implementation project.ext.dependencies.room_runtime
@@ -29,6 +31,6 @@ dependencies {
 
     implementation project.ext.dependencies.paging
 
-    implementation project.ext.dependencies.retrofit
+    api project.ext.dependencies.retrofit
     implementation project.ext.dependencies.moshi_converters
 }
