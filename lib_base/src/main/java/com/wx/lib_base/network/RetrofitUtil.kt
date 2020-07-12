@@ -24,6 +24,7 @@ object RetrofitUtil {
     fun getInstance(baseUrl : String) : Retrofit{
         mRetrofit = Retrofit.Builder()
             .baseUrl(baseUrl)
+            .addCallAdapterFactory(NetResponseAdapterFactory())
 //            .addConverterFactory(GsonConverterFactory.create())
 //            .addConverterFactory(ProtoConverterFactory.create())
             .addConverterFactory(MoshiConverterFactory.create())

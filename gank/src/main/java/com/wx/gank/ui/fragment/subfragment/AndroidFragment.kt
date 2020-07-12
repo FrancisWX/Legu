@@ -1,5 +1,6 @@
 package com.wx.gank.ui.fragment.subfragment
 
+import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -7,10 +8,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.scwang.smartrefresh.layout.SmartRefreshLayout
 import com.wx.gank.R
-import com.wx.lib_base.view.BaseFragment
 import com.wx.gank.adapter.GankDataAdapter
 import com.wx.gank.common.GankConstants
+import com.wx.gank.ui.fragment.BrowserFragment
 import com.wx.gank.viewmodel.GankViewModel
+import com.wx.lib_base.common.LogUtil
+import com.wx.lib_base.view.BaseFragment
 
 
 /**
@@ -50,6 +53,13 @@ class AndroidFragment (private val parentFragment : BaseFragment): BaseFragment(
 
         mRefresher = mRootView.findViewById(R.id.refresh_module_gank_android_fragment)
 
+        val fragment = BrowserFragment()
+        mAdapter.mItemClick = fun (pos) {
+            val url = mAdapter.getItemByPosition(pos).url
+            LogUtil.d("url => $url")
+            fragment.arguments = bundleOf(GankConstants.URL_BROWSER to url)
+
+        }
 
     }
 

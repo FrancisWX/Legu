@@ -28,6 +28,7 @@ dependencies {
     implementation project.ext.dependencies.fragment_ktx
 
     implementation project.ext.dependencies.retrofit
+    implementation project.ext.dependencies.moshi
     implementation project.ext.dependencies.material
     implementation project.ext.dependencies.viewPager2
 

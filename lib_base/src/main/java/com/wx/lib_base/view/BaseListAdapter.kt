@@ -37,5 +37,7 @@ abstract class BaseListAdapter<T> (
         realBindViewHolder(holder, position)
     }
 
+    fun getItemByPosition(pos : Int) : T = getItem(pos)
+
     abstract fun realBindViewHolder(holder: BaseViewHolder, position: Int)
 }
