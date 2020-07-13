@@ -11,4 +11,5 @@
     <dimen name="md_gank_height_item_decoration">3dp</dimen>
     <dimen name="md_gank_height_tab_tablayout">48dp</dimen>
     <dimen name="md_gank_height_image_welfare">200dp</dimen>
+    <dimen name="md_gank_height_progress_browser">3dp</dimen>
 </resources>

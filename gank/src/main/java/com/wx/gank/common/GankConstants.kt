@@ -19,4 +19,7 @@ object GankConstants {
     const val WEB_CONTENT_TYPE = "frontend"
     const val APP_CONTENT_TYPE = "app"
     const val GIRL_CONTENT_TYPE = "Girl"
+
+    const val URL_BROWSER = "URL"
+    const val BROWSER_PATH = "/gank/browser"
 }

@@ -44,7 +44,7 @@ class GankDataAdapter (
         val preView : ImageView = holder.getView(R.id.iv_preview_module_gank_item_view)
 
 
-        if (data.images.size > 0) {
+        if (data.images.isNotEmpty()) {
             ImageLoadManager.loadImage(preView, data.images[0], object :
                 IImageResLoadListener {
                 override fun onLoadFailed(e: Exception?) {

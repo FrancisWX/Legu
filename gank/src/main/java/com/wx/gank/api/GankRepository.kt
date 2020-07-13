@@ -21,7 +21,7 @@ object GankRepository{
     }
 
 
-    suspend fun getBannerData() : BannerDatas = gankService.getGankBanners()
+    suspend fun getBannerData()  = gankService.getGankBanners()
 
     private suspend fun apiCall(call : suspend() -> MutableList<GankData>) : MutableList<GankData> {
         return call.invoke()

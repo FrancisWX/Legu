@@ -27,6 +27,7 @@
                     android:id="@+id/banner_view_md_gank_main_fragment"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+
                     android:fitsSystemWindows="true"/>
 
 <!--            <ImageView-->
@@ -55,8 +56,9 @@
                 android:layout_height="@dimen/md_gank_height_tab_tablayout"
                 android:layout_alignParentBottom="true"
                 app:tabTextColor="@color/black"
-                app:tabIndicatorColor="@color/indianred"
-                app:tabSelectedTextColor="@color/white"
+                app:tabIndicatorColor="@color/white"
+            app:tabIndicatorHeight="@dimen/md_gank_height_tab_tablayout"
+                app:tabSelectedTextColor="@color/black"
                 app:tabMode="scrollable"
                 android:layout_gravity="bottom"
                 app:tabTextAppearance="@style/TabTextStyle" />

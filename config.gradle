@@ -143,21 +143,21 @@ project.ext {
             dependency.androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     }
 
-    def room_version = '2.2.5'
-    def lifecycle_version = '2.2.0'
+    def room_version = '2.3.0-alpha01'
+    def lifecycle_version = '2.3.0-alpha04'
     def nav_version = '2.3.0-alpha01'
-    def retrofit_version = '2.8.1'
+    def retrofit_version = '2.9.0'
     dependencies = [
             stdlib : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
-            appcompat : 'androidx.appcompat:appcompat:1.1.0',
-            core_ktx : 'androidx.core:core-ktx:1.2.0',
-            activity_ktx : 'androidx.activity:activity-ktx:1.2.0-alpha03',
+            appcompat : 'androidx.appcompat:appcompat:1.3.0-alpha01',
+            core_ktx : 'androidx.core:core-ktx:1.3.0',
+            activity_ktx : 'androidx.activity:activity-ktx:1.2.0-alpha06',
             recyclerView : 'androidx.recyclerview:recyclerview:1.2.0-alpha03',
             swipeRefreshLayout : 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0-rc01',
-            fragment_ktx : 'androidx.fragment:fragment-ktx:1.3.0-alpha04',
-            material : 'com.google.android.material:material:1.2.0-alpha06',
-            constraintLayout : 'androidx.constraintlayout:constraintlayout:2.0.0-beta4',
-            viewPager2 : 'androidx.viewpager2:viewpager2:1.0.0',
+            fragment_ktx : 'androidx.fragment:fragment-ktx:1.3.0-alpha06',
+            material : 'com.google.android.material:material:1.3.0-alpha01',
+            constraintLayout : 'androidx.constraintlayout:constraintlayout:2.0.0-beta6',
+            viewPager2 : 'androidx.viewpager2:viewpager2:1.1.0-alpha01',
 
             //room
             room_runtime : "androidx.room:room-runtime:$room_version",
@@ -171,9 +171,9 @@ project.ext {
             navigation_fragment :  "androidx.navigation:navigation-fragment-ktx:$nav_version",
             navigation_ui :  "androidx.navigation:navigation-ui-ktx:$nav_version",
             //paging
-            paging : "androidx.paging:paging-runtime:2.1.1",
+            paging : "androidx.paging:paging-runtime:3.0.0-alpha01",
             //workmanager
-            workManager : "androidx.work:work-runtime-ktx:2.3.1",
+            workManager : "androidx.work:work-runtime-ktx:2.3.4",
 
             //Image
             glide : 'com.github.bumptech.glide:glide:4.11.0',
@@ -186,12 +186,16 @@ project.ext {
             protobuf_converters : "com.squareup.retrofit2:converter-protobuf:$retrofit_version",
             moshi_converters : "com.squareup.retrofit2:converter-moshi:$retrofit_version",
 
-            smartRefreshLayout : 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0',
-            smartRefreshHeader : 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0',
+            moshi : 'com.squareup.moshi:moshi:1.9.3',
+
+            smartRefreshLayout : 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.3',
+            smartRefreshHeader : 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.3',
 
             shimmerLayout : 'io.supercharge:shimmerlayout:2.1.0',
             
-            banner : 'com.to.aboomy:pager2banner:0.0.4'
+            banner : 'com.to.aboomy:pager2banner:1.0.0',
+            //tencent webview
+            x5webview : 'com.tencent.tbs.tbssdk:sdk:43903'
 
 
     ]

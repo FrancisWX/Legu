@@ -3,6 +3,7 @@ package com.wx.gank.api
 import com.wx.gank.bean.BannerDatas
 import com.wx.gank.bean.GankDatas
 import com.wx.gank.common.GankConstants
+import com.wx.lib_base.network.NetResponse
 import retrofit2.http.GET
 import retrofit2.http.Path
 
@@ -16,7 +17,7 @@ interface ApiService {
      * 获取banner数据
      */
     @GET("banners")
-    suspend fun getGankBanners(): BannerDatas
+    suspend fun getGankBanners(): NetResponse<BannerDatas, Nothing>
 
     /**
      * 获取干货数据,默认每页15个

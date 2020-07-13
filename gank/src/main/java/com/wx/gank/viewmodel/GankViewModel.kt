@@ -9,6 +9,7 @@ import com.wx.gank.api.GankRepository
 import com.wx.gank.bean.BannerDatas
 import com.wx.gank.bean.GankData
 import com.wx.gank.common.GankConstants
+import com.wx.lib_base.network.NetResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -121,7 +122,12 @@ class GankViewModel : ViewModel(){
 
     private fun requestBannerData() {
         viewModelScope.launch (Dispatchers.IO) {
-            mBannerData.postValue(GankRepository.getBannerData())
+            when (val response =  GankRepository.getBannerData()) {
+                is NetResponse.Success -> mBannerData.postValue(response.body)
+                is NetResponse.ApiError -> LogUtil.d("request banner api error")
+                is NetResponse.NetError -> LogUtil.d("request banner net error")
+                is NetResponse.UnknownError -> LogUtil.d("request banner unknown error")
+            }
         }
     }
 
